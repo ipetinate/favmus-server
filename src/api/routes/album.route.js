@@ -1,7 +1,7 @@
+const albumController = require('../controllers/album.controller')
+
 const express = require('express')
 const router = express.Router()
-
-const albumController = require('../controllers/album.controller')
 
 router.get('/', albumController.getAll)
 router.get('/:id', albumController.getById)

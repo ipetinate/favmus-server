@@ -10,7 +10,7 @@ const app = express()
 
 // Configs
 const PORT = 3000
-const database = require('./database/connection-string')
+const connectionString = 'mongodb://localhost:27017/favmus'
 
 // JSON setup
 app.use(bodyParser.json())
@@ -28,7 +28,7 @@ app.listen(PORT, () => {
 })
 
 // Setup Mongo Connection
-mongoose.connect(database.connectionString)
+mongoose.connect(connectionString)
 mongoose.Promise = global.Promise
 
 const db = mongoose.connection
